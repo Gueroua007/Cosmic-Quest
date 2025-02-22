@@ -3,19 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Quest</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>CosmicX</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="icons">
-            <div class="icon floating">
-                <img src="rocket.png" alt="🚀" onclick="startGame()">
-            </div>
-            <div class="icon floating">
-                <img src="stats.png" alt="📊" onclick="showStats()">
-            </div>
-        </div>
+    <canvas id="starsCanvas"></canvas>
+
+    <!-- زر الإعدادات أعلى اليسار -->
+    <button class="settings-btn" onclick="openSettings()">⚙️</button>
+
+    <!-- شريط المعلومات أعلى اليمين -->
+    <div class="top-right-info">
+        <button onclick="showLeaderboard()">📊</button>
+        <span id="game-progress">🔹 75%</span>
+        <span id="currency">💎 120</span>
+    </div>
+
+    <!-- اسم اللعبة -->
+    <h1 class="game-title">🚀 CosmicX</h1>
+
+    <!-- زر "ابدأ اللعب" -->
+    <button class="play-btn" onclick="startGame()">🚀</button>
+
+    <!-- قائمة الأزرار بشكل دائري -->
+    <div class="circular-menu">
+        <button class="menu-btn" onclick="showTasks()">📜</button>
+        <button class="menu-btn" onclick="openPrivateChat()">💬</button>
+        <button class="menu-btn" onclick="openGlobalChat()">🌍</button>
+        <button class="menu-btn" onclick="openWallet()">💰</button>
+        <button class="menu-btn" onclick="openTrade()">🔄</button>
+        <button class="menu-btn" onclick="inviteFriends()">📩</button> <!-- زر دعوة الأصدقاء -->
     </div>
 
     <script src="script.js"></script>
