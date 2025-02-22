@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لعبة الفضاء</title>
+    <title>Cosmic Quest 🚀</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body { 
             text-align: center; 
@@ -24,13 +25,22 @@
     </style>
 </head>
 <body>
-    <h1>🚀 لعبة الفضاء 🚀</h1>
-    <p>اضغط على الزر للبدء</p>
+    <h1>🚀 Cosmic Quest 🚀</h1>
+    <p>مرحبًا <span id="username">لاعب مجهول</span>! اضغط على الزر للبدء.</p>
     <div class="game-container">
         <button onclick="startGame()">ابدأ اللعب</button>
     </div>
 
     <script>
+        // التحقق مما إذا كانت الصفحة تعمل داخل تيليجرام WebApp
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // توسيع الشاشة بالكامل
+
+        // جلب اسم المستخدم من تيليجرام
+        if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+            document.getElementById("username").innerText = tg.initDataUnsafe.user.first_name;
+        }
+
         function startGame() {
             alert("🚀 انطلق في مغامرتك الفضائية!");
         }
