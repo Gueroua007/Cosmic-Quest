@@ -1,0 +1,42 @@
+/* خلفية الفضاء */
+body {
+    background: black;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* النجوم */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+/* ترتيب الأيقونات في المنتصف */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* الأيقونات */
+.icons {
+    display: flex;
+    gap: 50px;
+}
+
+/* تحريك الأيقونات */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.icon {
+    animation: floating 3s ease-in-out infinite;
+}
