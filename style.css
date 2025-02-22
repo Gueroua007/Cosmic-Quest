@@ -1,42 +1,119 @@
-/* خلفية الفضاء */
 body {
-    background: black;
     margin: 0;
     overflow: hidden;
+    background-color: black;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
 }
 
-/* النجوم */
-.star {
+/* خلفية النجوم */
+canvas {
     position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.8;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-/* ترتيب الأيقونات في المنتصف */
-.container {
+/* زر الإعدادات */
+.settings-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* معلومات أعلى الشاشة */
+.top-right-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-right-info button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* تعديل موضع اسم اللعبة */
+.game-title {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* زر ابدأ اللعب */
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ff5722;
+    color: white;
+    font-size: 28px;
+    padding: 18px 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    min-width: 120px;
+    min-height: 120px;
+    text-align: center;
+    display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    box-shadow: 0 0 15px rgba(255, 87, 34, 0.7);
 }
 
-/* الأيقونات */
-.icons {
+.play-btn:hover {
+    background-color: #e64a19;
+}
+
+/* توزيع الأزرار حول زر "ابدأ اللعب" */
+.circular-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+}
+
+.menu-btn {
+    position: absolute;
+    background-color: rgba(255, 165, 0, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 20px;
+    cursor: pointer;
     display: flex;
-    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
 }
 
-/* تحريك الأيقونات */
-@keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
+/* توزيع الأزرار في شكل دائري */
+.menu-btn:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }  /* أعلى */
+.menu-btn:nth-child(2) { top: 25%; left: 85%; transform: translate(-50%, -50%); } /* أعلى اليمين */
+.menu-btn:nth-child(3) { top: 75%; left: 85%; transform: translate(-50%, -50%); } /* أسفل اليمين */
+.menu-btn:nth-child(4) { top: 100%; left: 50%; transform: translate(-50%, -100%); } /* أسفل */
+.menu-btn:nth-child(5) { top: 75%; left: 15%; transform: translate(-50%, -50%); } /* أسفل اليسار */
+.menu-btn:nth-child(6) { top: 25%; left: 15%; transform: translate(-50%, -50%); } /* أعلى اليسار */
+.menu-btn:nth-child(7) { top: 50%; left: 95%; transform: translate(-50%, -50%); } /* زر دعوة الأصدقاء */
 
-.icon {
-    animation: floating 3s ease-in-out infinite;
+.menu-btn:hover {
+    background-color: rgba(255, 140, 0, 0.9);
 }
